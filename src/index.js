@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "assets/scss/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const theme = createTheme({});
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </ThemeProvider>,
   document.getElementById("root")
 );
