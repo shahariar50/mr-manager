@@ -15,6 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import UserMenu from "../menu/UserMenu";
+import DrawerMenu from "../menu/DrawerMenu";
 
 const fullDrawerWidth = 280;
 const smallDrawerWidth = 80;
@@ -130,6 +131,7 @@ const MainLayout = ({ children, ...props }) => {
           <h1 style={{ margin: "0" }}>Mr.{isSidebarOpen && " Manager"}</h1>
         </DrawerHeader>
         <Divider />
+        <DrawerMenu />
       </Drawer>
       <Main>{children}</Main>
     </Box>

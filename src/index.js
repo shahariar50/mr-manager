@@ -5,9 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router } from "react-router-dom";
+import { blue } from "@mui/material/colors";
 
 const theme = createTheme({
-  palette: { text: { primary: "#000" } },
+  palette: {
+    primary: { main: blue[700], light: "#cae4f96b" },
+    text: { primary: "#000" },
+  },
   typography: {
     fontFamily: ["'Mulish', sans-serif"],
     body1: { fontSize: 16 },
@@ -16,8 +20,8 @@ const theme = createTheme({
     h2: { fontSize: 32 },
     h3: { fontSize: 24 },
     h4: { fontSize: 20 },
-    h5: { fontSize: 18, fontWeight: 600 },
-    h6: { fontSize: 16 },
+    h5: { fontSize: 18, fontWeight: 700 },
+    h6: { fontSize: 16, fontWeight: 700 },
   },
 });
 

@@ -73,7 +73,7 @@ const UserMenu = () => {
       >
         <MenuHeader>
           <div style={{ width: "max-content" }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
               Abdullah Al Sahariar
             </Typography>
             <Typography variant="body2" sx={{ margin: 0 }}>
