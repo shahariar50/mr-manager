@@ -7,6 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const theme = createTheme({
+  palette: { text: { primary: "#000" } },
   typography: {
     fontFamily: ["'Mulish', sans-serif"],
     body1: { fontSize: 16 },
