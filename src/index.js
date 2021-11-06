@@ -6,7 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const theme = createTheme({});
+const theme = createTheme({
+  typography: {
+    fontFamily: ["'Mulish', sans-serif"],
+    body1: { fontSize: 16 },
+    body2: { fontSize: 13 },
+    h1: { fontSize: 40 },
+    h2: { fontSize: 32 },
+    h3: { fontSize: 24 },
+    h4: { fontSize: 20 },
+    h5: { fontSize: 18, fontWeight: 600 },
+    h6: { fontSize: 16 },
+  },
+});
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
