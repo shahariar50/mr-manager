@@ -5,10 +5,19 @@ import {
   Menu,
   styled,
   Typography,
-  useTheme,
+  //   useTheme,
   Divider,
   Box,
+  MenuList,
+  ListItemIcon as MuiListItemIcon,
+  ListItemText as MuiListItemText,
+  MenuItem,
+  Button,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import SettingsIcon from "@mui/icons-material/Settings";
+import PersonIcon from "@mui/icons-material/Person";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const MenuHeader = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -16,10 +25,19 @@ const MenuHeader = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 const MenuBody = styled("div")(({ theme }) => ({
-  padding: theme.spacing(2),
+  padding: theme.spacing(1, 0),
+  color: theme.palette.text.primary,
 }));
 const MenuFooter = styled("div")(({ theme }) => ({
   padding: theme.spacing(2),
+  display: "flex",
+  justifyContent: "center",
+}));
+const ListItemIcon = styled(MuiListItemIcon)(({ theme }) => ({
+  color: theme.palette.text.primary,
+}));
+const ListItemText = styled(MuiListItemText)(({ theme }) => ({
+  color: theme.palette.text.primary,
 }));
 
 const UserMenu = () => {
@@ -64,9 +82,40 @@ const UserMenu = () => {
           </div>
         </MenuHeader>
         <Divider />
-        <MenuBody></MenuBody>
+        <MenuBody>
+          <MenuList>
+            <MenuItem>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText>Home</ListItemText>
+            </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <PersonIcon />
+              </ListItemIcon>
+              <ListItemText>Profile</ListItemText>
+            </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText>Settings</ListItemText>
+            </MenuItem>
+          </MenuList>
+        </MenuBody>
         <Divider />
-        <MenuFooter></MenuFooter>
+        <MenuFooter>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{ width: "100%" }}
+            // sx={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+            endIcon={<LogoutIcon />}
+          >
+            Logout
+          </Button>
+        </MenuFooter>
       </Menu>
     </>
   );
