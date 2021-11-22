@@ -24,6 +24,7 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 import SettingsIcon from "@mui/icons-material/Settings";
 import PersonIcon from "@mui/icons-material/Person";
 import RotateLeftIcon from "@mui/icons-material/RotateLeft";
+import { SIDEBAR_MENU } from "constants/sidebarMenu";
 
 const ListItem = styled(MuiListItem)(({ theme }) => ({
   padding: 0,
@@ -49,35 +50,35 @@ const DrawerMenu = () => {
 
   return (
     <Box>
-      <Box>
-        <Typography
-          variant="body2"
-          component="h5"
-          sx={{
-            fontWeight: 700,
-            paddingTop: theme.spacing(2),
-            paddingLeft: theme.spacing(4),
-          }}
-        >
-          General
-        </Typography>
-        <List>
-          <ListItem>
-            <Button
-              size="large"
-              startIcon={<DashboardRoundedIcon />}
-              active={true}
+      {SIDEBAR_MENU.map((menu) =>
+        menu.type === "group" ? (
+          <Box>
+            <Typography
+              variant="body2"
+              component="h5"
+              sx={{
+                fontWeight: 700,
+                paddingTop: theme.spacing(2),
+                paddingLeft: theme.spacing(4),
+              }}
             >
-              Dashboard
-            </Button>
-          </ListItem>
-          <ListItem>
-            <Button size="large" startIcon={<InsertChartIcon />}>
-              Reports
-            </Button>
-          </ListItem>
-        </List>
-      </Box>
+              {menu.name}
+            </Typography>
+            <List>
+              {menu.children.map((menu) => (
+                <ListItem>
+                  <Button size="large" startIcon={<menu.icon />} active={true}>
+                    {menu.title}
+                  </Button>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        ) : (
+          ""
+        )
+      )}
+
       <Box>
         <Typography
           variant="body2"
