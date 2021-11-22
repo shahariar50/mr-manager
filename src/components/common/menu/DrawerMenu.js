@@ -25,6 +25,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import PersonIcon from "@mui/icons-material/Person";
 import RotateLeftIcon from "@mui/icons-material/RotateLeft";
 import { SIDEBAR_MENU } from "constants/sidebarMenu";
+import { withRouter } from "react-router";
 
 const ListItem = styled(MuiListItem)(({ theme }) => ({
   padding: 0,
@@ -198,4 +199,4 @@ const DrawerMenu = () => {
   );
 };
 
-export default DrawerMenu;
+export default withRouter(DrawerMenu);
