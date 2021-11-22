@@ -46,7 +46,7 @@ const Button = styled(MuiButton)(({ theme, active }) => ({
   borderRadius: 0,
 }));
 
-const DrawerMenu = () => {
+const DrawerMenu = ({ location }) => {
   const theme = useTheme();
 
   return (
@@ -68,7 +68,11 @@ const DrawerMenu = () => {
             <List>
               {menu.children.map((menu) => (
                 <ListItem>
-                  <Button size="large" startIcon={<menu.icon />} active={true}>
+                  <Button
+                    size="large"
+                    startIcon={<menu.icon />}
+                    active={location.pathname === menu.link}
+                  >
                     {menu.title}
                   </Button>
                 </ListItem>
