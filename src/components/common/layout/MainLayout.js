@@ -131,7 +131,7 @@ const MainLayout = ({ children, ...props }) => {
           <h1 style={{ margin: "0" }}>Mr.{isSidebarOpen && " Manager"}</h1>
         </DrawerHeader>
         <Divider />
-        <DrawerMenu />
+        <DrawerMenu open={isSidebarOpen} />
       </Drawer>
       <Main>{children}</Main>
     </Box>
